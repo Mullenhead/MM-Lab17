@@ -1,22 +1,36 @@
 import { useState, type ChangeEvent } from "react"
+import type { Slide } from "./types"
 
-type Props ={}
+type Props = {
+    updateSlide: (property: string, value: string, id?: number) => void
+    selectedSlide?: Slide
+    handleClose: () => void
+   
+}
 
-export default function FontForms({} : Props) {
+export default function FontForm({updateSlide, selectedSlide, handleClose } : Props) {
     const[formValues, setFormValues] = useState({
-        fontFamily: "Verdana",
-        fontSize: "14"
+         fontFamily: selectedSlide?.fontFamily || "Verdana",
+         fontSize: selectedSlide?.fontSize || "14"
+          })
 
         const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
             setFormValues({
                 ...formValues,
                 [event?.target.name]: event?.target.value
             })
-    })
-    const handleCheckChange = value={formValues.fontFamily}
-    function handleChangevalue={formValues.fontFamily}
-        throw new Error("Function not implemented.")
+  
+        const handleSubmit = (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+
+       
+
+        updateSlide("fontFamily", formValues.fontFamily, selectedSlide?.id )
+        updateSlide("fontSize", formValues.fontSize, selectedSlide?.id )
+
+        handleClose()
     }
+    
 
     return (
         <form>
@@ -29,7 +43,7 @@ export default function FontForms({} : Props) {
                 >
                     <option value="Verdana">Verdana</option>
                     <option value="Arial">Arial</option>
-                    <option value="Futura">Futura</option>
+                    <option value="Caslon">Caslon</option>
                 </select>
             </div>
             <div className="mb-2">
@@ -41,8 +55,8 @@ export default function FontForms({} : Props) {
                 />
             </div>    
             <div className="text-end"> 
-            <button className="btn btn-secondary me-2">Cancel</button>
-            <button className="btn btn-success">Save</button>
+            <button type="button" className="btn btn-secondary me-2" onClick={handleClose} >Cancel</button>
+            <button className="btn btn-success" onClick={handleSubmit}>Save</button>
             </div>
         </form>
     )

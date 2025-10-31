@@ -1,6 +1,5 @@
 
-import CardImage1 from "./assets/ingredient1.png";
-import CardImage2 from "./assets/ingredient2.png";
+//Slide from types provides attributes of ingredients
 import type { Slide } from "./types";
 
 type ingredientProps = {
@@ -25,24 +24,22 @@ return (
         <div className="d-flex align-items-end flex-column">
      
 
-  {/* Button to delete the card? */}
- 
+  {/* X Button to delete the ingredient card */}
    <button 
     className="btn btn-sm btn-light" 
     onClick={() => deleteSlide(slide.id)}
     >X</button>
     </div> 
      
-    {/* <span>see ingredient?</span>
-    <img src={CardImage2} alt="nothing here" />  */}
-
+  {/* Show ingredient with onClick, selecting slide with golden outline  */}
+   <div >
     <img 
     src={slide.image} 
     style={{ width: "96px" }} 
     onClick={() => onSelected(slide.id)}
     />
-     <span> Item { slide.order } from { slide.description  }</span>
-
+    </div>
+       <span> Item { slide.order } from { slide.description  }</span>
       </div>
     </div>
   </div>

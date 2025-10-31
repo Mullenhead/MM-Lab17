@@ -11,7 +11,8 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { Stack } from "react-bootstrap"
 import type { Slide } from "./types"
-//function that takes in nothing and  returns void, nothing.
+import FontForm from "./FontForms"
+//function that takes in nothing and returns void, nothing.
 type ToolbarProps = {
     addBlankSlide: () => void
     updateSlide: (property: string, color: string, id?: number ) => void
@@ -31,7 +32,7 @@ export default function TopNav({
     const handleColorClose = () => setIsColorModalOpen(false)
     const handleFontClose = () => setIsFontModalOpen(false)
 
-
+// Modal with buttons to change font color of slide, with close function
     return (
         <div className=" d-flex justify-content-between bd-highlight mb-3">
             <h4>woof catering</h4>
@@ -76,6 +77,12 @@ export default function TopNav({
                     <Modal.Title>Change font Style</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                <FontForm 
+                updateSlide={updateSlide} 
+                selectedSlide={selectedSlide}
+                handleClose={handleFontClose}
+                />
+
                 <h6>Something here</h6>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleFontClose}>
