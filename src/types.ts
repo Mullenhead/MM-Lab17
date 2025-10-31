@@ -5,9 +5,9 @@ export type Slide = {
         description: string,
         text: string, 
         fontColor: string,
-        speakerNotes: string 
-        fontFamily: string
-        fontSize: string
+        speakerNotes?: string 
+        fontFamily?: string
+        fontSize?: string
         use: string
     }
 

@@ -1,13 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-// import Subs from "./Subs.tsx"
-import Counter from "./Counter.tsx"
+
+
 import Ingredients from "./Ingredients.tsx"
 import AddIngredient from "./AddIngredient.tsx"
-import Cookies from "./Cookies.tsx"
-import Tipping1 from "./Tipping1.tsx"
-import AllIngredients from "./AllIngredients.tsx"
-import TopNav from './TopNav.tsx'
+
+
 import ViewIngredients from "./ViewIngredients"
 // import UseEffectBasic from "./UseEffectBasic.tsx"
 import type { Slide } from "./types"
@@ -21,65 +19,7 @@ import CardImage4 from "./assets/ingredient4.png";
 import CardImage5 from "./assets/ingredient5.png";
 import CardImage6 from "./assets/ingredient6.png";
 import CardImage7 from "./assets/ingredient7.png"
-
-
-import {
-	BrowserRouter as Router,
-	Route,
-	Link,
-	Routes,
-	Outlet,
-
-} from "react-router-dom";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-function GFGHome() {
-	return (
-		<div>
-			<h2>GeeksforGeeks Home Page</h2>
-			<p>Welcome to the GeeksforGeeks Home Page.</p>
-		</div>
-	);
-}
-
-function GFGContact() {
-	return (
-		<div>
-			<h2>GeeksforGeeks Contact Page</h2>
-			<p>Contact us for any inquiries or support.</p>
-		</div>
-	);
-}
-function NotFound() {
-	return (
-		<div>
-			<h2>404 Not Found</h2>
-			<p>So Sorry, the page you are looking for does not exist.</p>
-		</div>
-	);
-}
-function GFGArticles() {
-	return (
-		<div>
-			<h2>GeeksforGeeks Articles Page</h2>
-			<p>
-				Explore a wide range of informative articles on various computer
-				science topics.
-			</p>
-		</div>
-	);
-}
-function GFGCourses() {
-	return (
-		<div>
-			<h2>GeeksforGeeks Courses Page</h2>
-			<p>
-				Enroll in comprehensive courses to enhance your coding skills
-				and knowledge.
-			</p>
-		</div>
-	);
-}
-
+import TopNav from './TopNav.tsx';
 
 
 
@@ -162,7 +102,7 @@ const TEST_CARDS = [
 
 
 
-export default function App() {
+export default function AllIngredients() {
 //slides drawing fro TEST_CARDS for content
 const[slides, setSlides] = useState<Slide[]>(TEST_CARDS)
 const[selectedSlideId, setSelectedSlideId] = useState(2)
@@ -183,10 +123,13 @@ const addBlankSlide = () => {
     fontColor: "gray",
     text: "Cabbage pairs well with all kinds of protein, from salmon to pork to chicken. It partners nicely with pasta—and it makes a most excellent soup.",
     use: "Used in soups"
+   
+    
   }
   //add blank slide to end of slides using "..."  spread operator
   setSlides([...slides, blankSlide])
 }
+
 //function using filter array method to isolate the slide we want to delete
 const deleteSlide = (idToDelete: number) => {
 setSlides( slides.filter( s => s.id !== idToDelete ) )
@@ -211,73 +154,9 @@ setSlides(currentSlides => currentSlides.map(slide => (
 
 return (
 <>
-{/* Atempt at adding a NAV bar from React site example */}
 
- <Router>
-			<Navbar bg="light" expand="lg">
-				<Navbar.Brand>
-					<h1 style={{ color: "purple" }}>Woof Catering</h1>
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="ml-auto">
-						<Nav.Link as={Link} to="/">
-							Home
-						</Nav.Link>
 
-						<Nav.Link as={Link} to="/Cookies">
-							Cookies
-						</Nav.Link>
-
-            	<Nav.Link as={Link} to="/Tipping">
-							Tipping
-						</Nav.Link>
-
-            <Nav.Link as={Link} to="/AllIngredients">
-							AllIngredients
-						</Nav.Link>
-
-            <Nav.Link as={Link} to="/AddIngredient">
-							Ingredients
-						</Nav.Link>
-
-           {/* Content place holder until I link to new content */}
-						<NavDropdown title="Resources">
-							<NavDropdown.Item as={Link} to="/articles">
-							Articles
-							</NavDropdown.Item>
-							<NavDropdown.Item as={Link} to="/courses">
-							Courses
-							</NavDropdown.Item>
-						</NavDropdown>
-
-						<Nav.Link as={Link} to="/contact">
-							Contact
-						</Nav.Link>
-
-					</Nav>
-				</Navbar.Collapse>
-			</Navbar>
-			<div className="container mt-4">
-				<Routes>
-          {/* Paths to functions to single page versions of pages */}
-					<Route path="/" element={<Outlet />}>
-						<Route index element={<GFGHome />} />
-
-						<Route path="/Cookies" element={<Cookies/>} />
-            <Route path="/Tipping" element={<Tipping1/>} />
-            <Route path="/AllIngredients" element={<AllIngredients/>} />
-            <Route path="/AddIngredient" element={<AllIngredients/>} />
-            {/* <Route path="/Ingredients" element={<Ingredients/>} /> */}
-            
-						<Route path="/contact" element={<GFGContact />} />
-						<Route path="/articles" element={<GFGArticles />} />
-						<Route path="/courses" element={<GFGCourses />} />
-						<Route path="*" element={<NotFound />} />
-					</Route>
-				</Routes>
-			</div>
-		</Router>
+          
 
 
 
@@ -306,17 +185,6 @@ return (
     <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
       <AddIngredient/>
     </div>
-
-    <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
-      <Cookies/>
-    </div>
-
-    {/* how can I have this one Tipping component be used for several tipping questions? */}
-     <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
-      <Tipping1/>
-    
-    </div>
-
     </>
   )
 }
