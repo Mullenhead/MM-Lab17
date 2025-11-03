@@ -34,9 +34,9 @@ export default function Ingredients({
  {isExpanded ? (
   <div>
      <div>
-       <h5 className="text-muted h3 p-4">Fresh, natural, but not organic ingredients</h5>
+       <h5 className="text-muted h3 p-4">We use fresh, natural, but not organic ingredients</h5>
       </div>
-       {/* <ViewIngredients/>  */}
+       {/* <View Ingredients by mapping "Slides, also accessing functions to select and delete a slide"/>  */}
        <div >
         {slides.map( s => (
           <Ingredient 

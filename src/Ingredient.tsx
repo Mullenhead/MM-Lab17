@@ -19,6 +19,7 @@ export default function Ingredient({
 return (
 
   <div className=" d-inline-flex m-2 " >
+     {/* Show "isSelected"  ingredient with golden outline  */}
     <div className= { `border border-4 rounded-4 ${isSelected ? "border-warning" : "border-light"}`}>
       <div className=" d-flex border border-secondary rounded-3 flex-column m-1 p-3">
         <div className="d-flex align-items-end flex-column">
@@ -31,7 +32,7 @@ return (
     >X</button>
     </div> 
      
-  {/* Show ingredient with onClick, selecting slide with golden outline  */}
+  {/* Show ingredient with onClick, */}
    <div >
     <img 
     src={slide.image} 

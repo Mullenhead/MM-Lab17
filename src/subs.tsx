@@ -1,4 +1,4 @@
-import Description from "./components/Description";
+// import Description from "./components/Description";
 import sub_1 from "./assets/sub_1.png";
 import sub_2 from "./assets/sub_2.png";
 import sub_3 from "./assets/sub_3.png";

@@ -18,6 +18,7 @@ export default function Tipping2() {
         I would like to tip $50.
         </label>
         <p className="fw-bold"> {liked ? "Thank you for your generousity" : " Was the service that bad?"} </p>
-        </>
+       
+    </>
     );
 }

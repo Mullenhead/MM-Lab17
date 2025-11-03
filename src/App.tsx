@@ -4,8 +4,10 @@ import './App.css'
 import Counter from "./Counter.tsx"
 import Ingredients from "./Ingredients.tsx"
 import AddIngredient from "./AddIngredient.tsx"
+import ToDoList from "./ToDoList.tsx"
 import Cookies from "./Cookies.tsx"
-import Tipping1 from "./Tipping1.tsx"
+import Tips from "./Tips.tsx"
+// import Main_Cards from "./Main_Cards.tsx"
 import AllIngredients from "./AllIngredients.tsx"
 import TopNav from './TopNav.tsx'
 import ViewIngredients from "./ViewIngredients"
@@ -32,6 +34,7 @@ import {
 
 } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import Main_Cards from "./Main_Cards.tsx";
 function GFGHome() {
 	return (
 		<div>
@@ -214,35 +217,49 @@ return (
 {/* Atempt at adding a NAV bar from React site example */}
 
  <Router>
-			<Navbar bg="light" expand="lg">
-				<Navbar.Brand>
-					<h1 style={{ color: "purple" }}>Woof Catering</h1>
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
+			<Navbar bg="light  p- shadow"  className="fixed-top m-3 " >
+        <div className = "d-flex mx-auto" >
+        <div >
+				  <Navbar.Brand>
+					<h3 style={{ color: "purple" }}>Woof Catering</h3>
+				  </Navbar.Brand>
+        </div>
+        <div>
+				  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+				  <Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="ml-auto">
 						<Nav.Link as={Link} to="/">
-							Home
+							  Home
 						</Nav.Link>
+
+            {/* <Nav.Link as={Link} to="/Main_Cards">
+							Main_Cards
+						</Nav.Link> */}
 
 						<Nav.Link as={Link} to="/Cookies">
 							Cookies
 						</Nav.Link>
 
-            	<Nav.Link as={Link} to="/Tipping">
-							Tipping
+            	<Nav.Link as={Link} to="/Tips">
+							Tips
 						</Nav.Link>
 
+            
+
             <Nav.Link as={Link} to="/AllIngredients">
-							AllIngredients
+							All Ingredients
 						</Nav.Link>
 
             <Nav.Link as={Link} to="/AddIngredient">
-							Ingredients
+							Add Ingredient
+						</Nav.Link>
+
+              <Nav.Link as={Link} to="/ToDoList">
+							Daily Special
 						</Nav.Link>
 
            {/* Content place holder until I link to new content */}
-						<NavDropdown title="Resources">
+						{/* <NavDropdown title="Resources">
 							<NavDropdown.Item as={Link} to="/articles">
 							Articles
 							</NavDropdown.Item>
@@ -253,21 +270,25 @@ return (
 
 						<Nav.Link as={Link} to="/contact">
 							Contact
-						</Nav.Link>
+						</Nav.Link> */}
 
 					</Nav>
 				</Navbar.Collapse>
+        </div>
+        </div>
 			</Navbar>
 			<div className="container mt-4">
 				<Routes>
           {/* Paths to functions to single page versions of pages */}
 					<Route path="/" element={<Outlet />}>
-						<Route index element={<GFGHome />} />
+						<Route index element={<Main_Cards />} />
 
+            {/* <Route path="/Main_Cards" element={<Main_Cards/>} /> */}
 						<Route path="/Cookies" element={<Cookies/>} />
-            <Route path="/Tipping" element={<Tipping1/>} />
+            <Route path="/Tips" element={<Tips/>} />
             <Route path="/AllIngredients" element={<AllIngredients/>} />
-            <Route path="/AddIngredient" element={<AllIngredients/>} />
+            <Route path="/AddIngredient" element={<AddIngredient/>} />
+             <Route path="/ToDoList" element={<ToDoList/>} />
             {/* <Route path="/Ingredients" element={<Ingredients/>} /> */}
             
 						<Route path="/contact" element={<GFGContact />} />
@@ -276,46 +297,16 @@ return (
 						<Route path="*" element={<NotFound />} />
 					</Route>
 				</Routes>
+        
 			</div>
+      
 		</Router>
 
 
-
-    <div className=" d-flex bg-light  rounded flex-column p-3">
-{/* adding prop "blank slide" */}
-      <TopNav 
-      selectedSlide={selectedSlide} 
-      addBlankSlide={addBlankSlide} 
-      updateSlide={updateSlide}/> 
-    </div>
-
-    <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
-      <Ingredients 
-      slides={slides} 
-      deleteSlide={deleteSlide} 
-      selectedSlideId={selectedSlideId} 
-      setSelectedSlideId={setSelectedSlideId}/>
-      
-      <ViewIngredients 
-      slide={selectedSlide}
-      updateSlide={updateSlide}
-      />
-    </div>
-
   {/* Add functions to App page */}
-    <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
+    {/* <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
       <AddIngredient/>
-    </div>
-
-    <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
-      <Cookies/>
-    </div>
-
-    {/* how can I have this one Tipping component be used for several tipping questions? */}
-     <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
-      <Tipping1/>
-    
-    </div>
+    </div> */}
 
     </>
   )

@@ -35,13 +35,12 @@ export default function TopNav({
 // Modal with buttons to change font color of slide, with close function
     return (
         <div className=" d-flex justify-content-between bd-highlight mb-3">
-            <h4>woof catering</h4>
+            <h5>Add more ingredients</h5>
             <div>
                 <TopNavButton icon={colorIcon} buttonText={" Color "} onClick={() => setIsColorModalOpen(true)} />
                 <TopNavButton icon={fontIcon} buttonText={" Font"} onClick={() => setIsFontModalOpen(true)} />
                 <TopNavButton icon={weightIcon} buttonText={" Weight"} onClick={() => alert("Send me to c")} />
                 <TopNavButton icon={plusIcon} buttonText={" Add Cabbage"} onClick={addBlankSlide} />
-
             </div>
             <Modal show={isColorModalOpen} onHide={handleColorClose} animation={false}>
                 <Modal.Header closeButton>

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+
+
 export default function Tipping1() {
     const [liked, setLiked] = useState(true);
 

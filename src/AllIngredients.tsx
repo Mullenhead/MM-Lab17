@@ -154,14 +154,8 @@ setSlides(currentSlides => currentSlides.map(slide => (
 
 return (
 <>
-
-
-          
-
-
-
-    <div className=" d-flex bg-light  rounded flex-column p-3">
-{/* adding prop "blank slide" */}
+    <div className=" d-flex bg-light mt-6 rounded flex-column p-3">
+  {/* adding prop "blank slide" */}
       <TopNav 
       selectedSlide={selectedSlide} 
       addBlankSlide={addBlankSlide} 
@@ -181,10 +175,10 @@ return (
       />
     </div>
 
-  {/* Add functions to App page */}
+  {/* Add functions to App page
     <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
       <AddIngredient/>
-    </div>
+    </div> */}
     </>
   )
 }
