@@ -1,21 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 // import Subs from "./Subs.tsx"
-import Counter from "./Counter.tsx"
-import Ingredients from "./Ingredients.tsx"
+// import Counter from "./Counter.tsx"
 import AddIngredient from "./AddIngredient.tsx"
 import ToDoList from "./ToDoList.tsx"
 import Cookies from "./Cookies.tsx"
 import Tips from "./Tips.tsx"
+// import Test from "./Test.tsx"
+import AddChips from "./AddChips.tsx"
 // import Main_Cards from "./Main_Cards.tsx"
 import AllIngredients from "./AllIngredients.tsx"
-import TopNav from './TopNav.tsx'
-import ViewIngredients from "./ViewIngredients"
-// import UseEffectBasic from "./UseEffectBasic.tsx"
 import type { Slide } from "./types"
 import { useEffect, useState } from 'react';
 
-// import ViewIngredients from "./ViewIngredients";
+
 import CardImage1 from "./assets/ingredient1.png";
 import CardImage2 from "./assets/ingredient2.png";
 import CardImage3 from "./assets/ingredient3.png";
@@ -236,6 +234,14 @@ return (
 							Main_Cards
 						</Nav.Link> */}
 
+            {/* <Nav.Link as={Link} to="/Test">
+							Test
+						</Nav.Link> */}
+
+             <Nav.Link as={Link} to="/AddChips">
+							AddChips
+						</Nav.Link>
+
 						<Nav.Link as={Link} to="/Cookies">
 							Cookies
 						</Nav.Link>
@@ -284,6 +290,8 @@ return (
 						<Route index element={<Main_Cards />} />
 
             {/* <Route path="/Main_Cards" element={<Main_Cards/>} /> */}
+            {/* <Route path="/Test" element={<Test/>} /> */}
+             <Route path="/AddChips" element={<AddChips/>} />
 						<Route path="/Cookies" element={<Cookies/>} />
             <Route path="/Tips" element={<Tips/>} />
             <Route path="/AllIngredients" element={<AllIngredients/>} />

@@ -4,7 +4,7 @@ import fontIcon from "./assets/font.svg"
 import weightIcon from "./assets/weight.svg"
 import plusIcon from "./assets/plus.svg"
 
-import forkIcon from "./assets/fork.svg"
+
 import TopNavButton from "./TopNavButton"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -15,15 +15,14 @@ import FontForm from "./FontForms"
 //function that takes in nothing and returns void, nothing.
 type ToolbarProps = {
     addBlankSlide: () => void
-    updateSlide: (property: string, color: string, id?: number ) => void
+    updateSlide: (property: string, 
+        color: string, 
+        id?: number ) => void
+
     selectedSlide?: Slide
 }
 //receiving 'Blank slide" prop from Top nav
-export default function TopNav({ 
-    addBlankSlide, 
-    updateSlide,
-    selectedSlide
- }: ToolbarProps) {
+export default function TopNav({  addBlankSlide, updateSlide, selectedSlide}: ToolbarProps) {
 
     // functions for top nav buttons, open and close
     const [isColorModalOpen, setIsColorModalOpen] = useState(false)

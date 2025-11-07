@@ -16,8 +16,8 @@ export default function Cookies(){
         <input value={extra} onChange={e => setExtra(e.target.value)} />
         <div className="container">
         <button className="btn btn-warning m-3" onClick={() => setNumber(number + 1)}> Add another sweet!</button>
-      
         </div>
+        
         {/* how can I make this button link in and increase number? */}
         <Cookies_Button/>
         <p className="fw-bold">You have {number} {extra}'s in your order.</p>

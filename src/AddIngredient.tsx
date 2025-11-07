@@ -1,4 +1,5 @@
 import { useState, type SetStateAction } from 'react';
+import Obscure from './Obscurei';
 
 export default function AddIngredient() {
     const [text, setText] = useState(" Add something.");
@@ -6,7 +7,9 @@ export default function AddIngredient() {
 
     function handleChange(e: { target: { value: SetStateAction<string>; }; }) { setText(e.target.value); }
     return (
+        
         <>
+        <Obscure/>
         <h4> Add your favorite ingredient</h4>
         <input value={text} onChange={handleChange} />
         <p> You have added: {text}</p>
@@ -14,5 +17,6 @@ export default function AddIngredient() {
         <button className="btn btn-primary" onClick={ () => setText("ingredient")}> Reset this</button>
         </div>
         </>
+       
     );
 }

@@ -1,4 +1,14 @@
 import { useState } from 'react';
+import type { Slide } from "./types";
+
+type AddToDoProps = {
+    addBlankSlide: () => void
+    updateSlide: (property: string, 
+        color: string, 
+        id?: number ) => void,
+        onAddTodo: string
+    }
+
 
 export default function AddTodo({ onAddTodo }) {
   const [title, setTitle] = useState('');

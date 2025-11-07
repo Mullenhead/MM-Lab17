@@ -1,10 +1,19 @@
 import { useState } from 'react';
 
-export default function TaskList({
-  todos,
-  onChangeTodo,
-  onDeleteTodo
-}) {
+type TaskListProps = {
+    todos: string,
+    onChangeTodo: string,
+    onDeleteTodo: String,
+    onChange: string,
+    onDelete: string,
+    todo: String
+    title: string
+ }
+
+ 
+
+
+export default function TaskList({ todos, onChangeTodo, onDeleteTodo }:TaskListProps) {
   return (
     <>
       {todos.map(todo => (
@@ -20,7 +29,7 @@ export default function TaskList({
   );
 }
 
-function Task({ todo, onChange, onDelete }) {
+function Task({ todo, onChange, onDelete }:TaskProps) {
   const [isEditing, setIsEditing] = useState(false);
   let todoContent;
   if (isEditing) {

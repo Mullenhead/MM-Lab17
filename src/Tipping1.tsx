@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Tipping1() {
     const [liked, setLiked] = useState(true);
 
-    function handleChange(e)
+    function handleChange(e: React.FormEvent<HTMLInputElement>)
     {setLiked(e.target.checked);}
 
     return (

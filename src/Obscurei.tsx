@@ -29,13 +29,13 @@
 import React, {useState, useEffect} from "react";
 
 
-export default function UseEffectBasic() {
+export default function Obsecure() {
 
     const [todo, setTodo]= useState({});
     const [randomID, setRandomID] = useState(1);
 
 useEffect(() => {
-    let URL = `https://jsonplaceholder.typicode.com/todos/${randomID}`
+    let URL = "http://localhost:3005/menu"
 
     fetch(URL)
     .then((response) => response.json())

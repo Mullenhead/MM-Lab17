@@ -1,5 +1,33 @@
 
 {
+"special": [
+  {
+    "id": 0,
+    "order": 1,
+    "image": "orderImage1",
+    "description": "Classic Itilian Sub",
+    "beverage": "Coke",
+    "extra": "chips"
+  },
+   {
+    "id": 1,
+    "order": 2,
+    "image": "orderImage2",
+    "description": "Grilled Cheese",
+    "beverage": "Pepsi",
+    "extra": "chips"
+  },
+   {
+    "id": 2,
+    "order": 3,
+    "image": "orderImage3",
+    "description": "Chicken salad",
+    "beverage": "Sprite",
+    "extra": "Cookie"
+  }
+],
+  
+
 "subIngredients":  [
   {
     "id": 0,
@@ -40,7 +68,7 @@
 ],
 
 
-"Menu" : [
+"menu" : [
 {
   "sandwiches": [
     { "id": 1, "name": "Classic Italian Combo", "rating": 4 },

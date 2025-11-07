@@ -8,7 +8,8 @@ export type Slide = {
         speakerNotes?: string 
         fontFamily?: string
         fontSize?: string
-        use: string
+        use: string,
+        addTodo: string
     }
 
   
