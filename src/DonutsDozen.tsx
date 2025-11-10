@@ -2,23 +2,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 
-import Ingredients from "./Ingredients.tsx"
+import Donuts from "./Donuts.tsx"
 // import AddIngredient from "./AddIngredient.tsx"
 
 
-import ViewIngredients from "./ViewIngredients"
+import DonutView from "./DonutView.tsx"
 // import UseEffectBasic from "./UseEffectBasic.tsx"
-import type { Slide } from "./types"
+import type { Slide } from "./types.ts"
 import { useEffect, useState } from 'react';
 
 // import ViewIngredients from "./ViewIngredients";
-import CardImage1 from "./assets/ingredient1.png";
-import CardImage2 from "./assets/ingredient2.png";
-import CardImage3 from "./assets/ingredient3.png";
-import CardImage4 from "./assets/ingredient4.png";
-import CardImage5 from "./assets/ingredient5.png";
-import CardImage6 from "./assets/ingredient6.png";
-import CardImage7 from "./assets/ingredient7.png"
+import CardImage1 from "./assets/donut1.png";
+import CardImage2 from "./assets/donut2.png";
+import CardImage3 from "./assets/donut3.png";
+import CardImage4 from "./assets/donut4.png";
+import CardImage5 from "./assets/donut5.png";
+import CardImage6 from "./assets/donut6.png";
+import CardImage7 from "./assets/donut1.png"
 import TopNav from './TopNav.tsx';
 
 
@@ -28,13 +28,13 @@ const TEST_CARDS = [
     id: 0,
     order: 1,
     image: CardImage1,
-    description: "From Italy",
+    description: "Jerrie's Donuts",
     fontColor: "gold",
-    text: "Crafted with care in Italy, our Ground Rosemary embodies the essence of Italian culinary tradition",
+    text: "Best cream filled crullers this side of the Mississippi",
     speakerNotes: "Default Notes",
     fontFamily: "Verdana",
     fontSize: "14",
-    use: "Used in pasta dishes"
+    use: "Worshiped by many"
    
   },
   {
@@ -100,10 +100,9 @@ const TEST_CARDS = [
 ]
 
 
+//how to draw from API    const url = "http://localhost:3005/special" 
 
-
-export default function AllIngredients() {
-//slides drawing fro TEST_CARDS for content
+export default function DonutsDozen() {
 const[slides, setSlides] = useState<Slide[]>(TEST_CARDS)
 const[selectedSlideId, setSelectedSlideId] = useState(2)
 const selectedSlide = slides.find(s => s.id === selectedSlideId)
@@ -119,10 +118,10 @@ const addBlankSlide = () => {
     id: slides.length ? slides[slides.length - 1].id + 1 : 0,
     order: 7,
     image: CardImage7,
-    description: "From Armenia",
-    fontColor: "gray",
-    text: "Cabbage pairs well with all kinds of protein, from salmon to pork to chicken. It partners nicely with pasta—and it makes a most excellent soup.",
-    use: "Used in soups",
+    description: "Jerrie's Donuts",
+    fontColor: "Pink",
+    text: "Decorated with pink frosting.",
+    use: "Eaten daily",
     addTodo: "woof"
    
     
@@ -164,13 +163,13 @@ return (
     </div>
 
     <div className=" d-flex border border-secondary rounded flex-column m-1 p-3">
-      <Ingredients 
+      <Donuts 
       slides={slides} 
       deleteSlide={deleteSlide} 
       selectedSlideId={selectedSlideId} 
       setSelectedSlideId={setSelectedSlideId}/>
       
-      <ViewIngredients 
+      <DonutView 
       slide={selectedSlide}
       updateSlide={updateSlide}
       />

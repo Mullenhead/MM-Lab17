@@ -26,7 +26,7 @@ return(
              ></button>
 
          <button className="btn btn-primary p-1 border" 
-           onClick= {() => alert("Send me to c")}
+           onClick= () => alert("Send me to c")
            ></button>
 
            <button className="btn btn-primar p-1 bordery" 

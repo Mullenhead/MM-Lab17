@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Ingredient from "./Ingredient";
+import Donut from "./Donut";
 import type { Slide } from './types';
 
 
@@ -39,7 +39,7 @@ export default function Ingredients({
        {/* <View Ingredients by mapping "Slides, also accessing functions to select and delete a slide"/>  */}
        <div >
         {slides.map( s => (
-          <Ingredient 
+          <Donut 
             key={s.id} 
             slide={ s }  
             onSelected={handleSlideClick}  

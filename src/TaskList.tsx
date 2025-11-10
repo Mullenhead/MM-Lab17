@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 type TaskListProps = {
     todos: string,
+    todo: String
     onChangeTodo: string,
     onDeleteTodo: String,
     onChange: string,
     onDelete: string,
-    todo: String
     title: string
  }
 
