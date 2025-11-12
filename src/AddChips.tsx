@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Tips from "./Tips.tsx"
 // import React, { useState, useEffect } from "react";
 
 type orderProps = {
@@ -35,8 +36,21 @@ async function onFetchFoodClick() {
 
 let lastCreatedItem: { id: string; } | null = null
 //Create new food item in API
+
   async function onCreateFoodClick() {
-    const testFood = { title: "Create Test", order: 1 }
+    const testFood = { description: "Mystery meat sandwich", beverage:"Dr. Pepper", extra:"bag of Doritos", order: "4", id:4 }
+    const response = await fetch('http://localhost:3005/special', {
+        method: 'POST', //creatin a new "special"
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(testFood) // takes any data and makes it a string for JSON
+    });
+    const newlyCreatedItem = await response.json()
+    lastCreatedItem = newlyCreatedItem + 1
+}
+
+  async function onCreateFoodClick1() {
+    
+    const testFood = { description: "Turkey Day Special", beverage:"Apple Cider", extra:"Onion Rings", id:"5", order:"5" }
     const response = await fetch('http://localhost:3005/special', {
         method: 'POST', //creatin a new "special"
         headers: {'Content-Type': 'application/json'},
@@ -56,7 +70,7 @@ async function onUpdateFoodClick() {
 await fetch('http://localhost:3005/special/' + lastCreatedItem.id, {
         method: 'PUT', //update API"
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ order: '*** Updat Test ***', genreId: 2 }) // updates as a test for now..
+        body: JSON.stringify({ order: '*** Updat Test ***' }) // updates as a test for now..
     })
     const response = await fetch("http://localhost:3005/special")
     const foodList = await response.json()
@@ -68,26 +82,48 @@ await fetch('http://localhost:3005/special/' + lastCreatedItem.id, {
 //Delete API
 async function onDeleteFoodClick() {
     const itemToDelete = prompt('Enter order number to delete!');
-  
+
+//     // Use State hook for age
+//     const [age, setAge] = useState(5);
+
+//     // function to increse visits(age) by 1
+// const incrementAge = () => {
+//         setAge (age + 1);
+//     }
+//   {/* <p>Another Age: {age}</p> */}
+//         <button onClick={incrementAge} className="btn btn-outline-primary m-2">{props.btn_title4}</button>
+
+
 await fetch('http://localhost:3005/special/' + itemToDelete, {
         method: 'DELETE', //delete API"
        
     })
-     const response = await fetch("http://localhost:3005/special")
+    const response = await fetch("http://localhost:3005/special")
     const foodList = await response.json()
     setFood(foodList);
 }
 
 
   return (
-    <div className=" d-flex border border-secondary rounded-3 flex-column m-1 p-3">
+
+  <>
+    <div className="d-flex border border-secondary rounded-3 flex-column m-5 p-3">
+      <Tips/>
+    </div>
+
+    <div className=" d-flex border border-secondary rounded-3 flex-column m-5 p-3">
       <h1 style={{ color: "#71bdddff" }}>This is your order</h1>
       <div>
+
+            {/* <button onClick={updateName} className="btn btn-outline-primary m-2">{props.btn_title3}</button> */}
         {/* //buttons for fetch, add, update, delete from API */}
-         <button onClick={onFetchFoodClick}  className="btn- btn-primary">Fetch Food</button>
-         <button onClick={onCreateFoodClick}  className="btn- btn-warning">Add Food Item</button>
-         <button onClick={onUpdateFoodClick}  className="btn- btn-secondary">Update Food Item</button> 
-         <button onClick={onDeleteFoodClick}  className="btn- btn-danger">Delete Food Item</button>
+        <div className=" d-flex  bd-highlight ">
+         <button onClick={onFetchFoodClick}  className="btn btn-primary m-2">Fetch Order</button>
+         <button onClick={onCreateFoodClick}  className="btn btn-warning m-2" >Add Roast Beef</button>
+          <button onClick={onCreateFoodClick1}  className="btn btn-warning m-2">Add Chicken sandwich</button>
+         {/* <button onClick={onUpdateFoodClick}  className="btn- btn-secondary">Update Food Item</button>  */}
+         <button onClick={onDeleteFoodClick}  className="btn btn-danger m-2">Delete Food Item</button>
+         </div>
 
         <div id="food-container"></div>
         <script src="test.js"></script>
@@ -112,6 +148,7 @@ await fetch('http://localhost:3005/special/' + itemToDelete, {
         })}
       </center>
     </div>
+    </>
   );
 }
 

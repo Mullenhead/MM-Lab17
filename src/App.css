@@ -63,3 +63,16 @@ body {
   display: flex;
   justify-content: center;
 }
+
+
+.UseProps{
+  font-family:'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
+  font-size: 1em;
+  padding: 20px;
+  border: 2px dashed rgba(0, 0, 0, 0.127)
+}
+
+
+.UseProps p{
+ margin: 0;
+}

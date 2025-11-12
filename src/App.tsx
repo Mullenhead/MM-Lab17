@@ -5,9 +5,12 @@ import './App.css'
 import AddIngredient from "./AddIngredient.tsx"
 import ToDoList from "./ToDoList.tsx"
 import Cookies from "./Cookies.tsx"
+import AddChips from "./AddChips.tsx"
+// import TakeOrder from "./TakeOrder.tsx"
+import UsePropsList from "./UsePropsList.tsx"
 import Tips from "./Tips.tsx"
 // import Test from "./Test.tsx"
-import AddChips from "./AddChips.tsx"
+// import YourOrder from "./AddChips.tsx"
 import DonutsDozen from "./DonutsDozen.tsx"
 // import AddSub from "./AddSub.tsx"
 // import Main_Cards from "./Main_Cards.tsx"
@@ -38,8 +41,8 @@ import Main_Cards from "./Main_Cards.tsx";
 function GFGHome() {
 	return (
 		<div>
-			<h2>GeeksforGeeks Home Page</h2>
-			<p>Welcome to the GeeksforGeeks Home Page.</p>
+			<h2>Home Page</h2>
+			<p>Welcome to the Home Page.</p>
 		</div>
 	);
 }
@@ -236,33 +239,34 @@ return (
 							Test
 						</Nav.Link> */}
 
-             <Nav.Link as={Link} to="/AddChips">
-							AddChips
+          
+              <Nav.Link as={Link} to="/AddChips">
+						  Your Order
 						</Nav.Link>
 
-               <Nav.Link as={Link} to="/DonutsDozen">
+                <Nav.Link as={Link} to="/UsePropsList">
+							Best Customers
+						</Nav.Link>
+
+               {/* <Nav.Link as={Link} to="/DonutsDozen">
 							DonutsDozen
-						</Nav.Link>
-
-               {/* <Nav.Link as={Link} to="/AddSub">
-							AddSub
-						</Nav.Link> */}
-
+						</Nav.Link>        */}
+{/* 
 						<Nav.Link as={Link} to="/Cookies">
 							Cookies
-						</Nav.Link>
+						</Nav.Link> */}
 
-            	<Nav.Link as={Link} to="/Tips">
+            	{/* <Nav.Link as={Link} to="/Tips">
 							Tips
-						</Nav.Link>
+						</Nav.Link> */}
 
             <Nav.Link as={Link} to="/AllIngredients">
 							All Ingredients
 						</Nav.Link>
 
-            <Nav.Link as={Link} to="/AddIngredient">
+            {/* <Nav.Link as={Link} to="/AddIngredient">
 							Add Ingredient
-						</Nav.Link>
+						</Nav.Link> */}
 
               <Nav.Link as={Link} to="/ToDoList">
 							Daily Special
@@ -278,30 +282,14 @@ return (
           {/* Paths to functions to single page versions of pages */}
 					<Route path="/" element={<Outlet />}>
 						<Route index element={<Main_Cards />} />
-
-            {/* <Route path="/Main_Cards" element={<Main_Cards/>} /> */}
-            {/* <Route path="/Test" element={<Test/>} /> */}
-            <Route path="/AddChips" element={<AddChips id={0} order={0} image={''} description={''} beverage={''} extra={''} food={''} lastCreatedItem={''} foodContainer={''} beverages={''} isSelected={false} onSelected={function (id: number): void {
-              throw new Error('Function not implemented.');
-            } } deleteSlide={function (id: number): void {
-              throw new Error('Function not implemented.');
-            } }/>} />
             <Route path="/DonutsDozen" element={<DonutsDozen/>} />
-            {/* <Route path="/AddSub" element={<AddSub/>} /> */}
 						<Route path="/Cookies" element={<Cookies/>} />
+             <Route path="/AddChips" element={<AddChips/>} />
+            <Route path="/UsePropsList" element={<UsePropsList/>} />
             <Route path="/Tips" element={<Tips/>} />
             <Route path="/AllIngredients" element={<AllIngredients/>} />
-            <Route path="/AddIngredient" element={<AddIngredient slides={[]} selectedSlideId={0} setSelectedSlideId={function (newValue: number): void {
-              throw new Error('Function not implemented.');
-            } } deleteSlide={function (id: number): void {
-              throw new Error('Function not implemented.');
-            } }/>} />
+            <Route path="/AddIngredient" element={<AddIngredient/>} />
              <Route path="/ToDoList" element={<ToDoList/>} />
-            {/* <Route path="/Ingredients" element={<Ingredients/>} /> */}
-            
-						<Route path="/contact" element={<GFGContact />} />
-						<Route path="/articles" element={<GFGArticles />} />
-						<Route path="/courses" element={<GFGCourses />} />
 						<Route path="*" element={<NotFound />} />
 					</Route>
 				</Routes>
