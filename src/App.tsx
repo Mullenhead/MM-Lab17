@@ -7,7 +7,7 @@ import ToDoList from "./ToDoList.tsx"
 import Cookies from "./Cookies.tsx"
 import AddChips from "./AddChips.tsx"
 // import TakeOrder from "./TakeOrder.tsx"
-import UsePropsList from "./UsePropsList.tsx"
+import UsePropsPage from "./UsePropsPage.tsx"
 import Tips from "./Tips.tsx"
 // import Test from "./Test.tsx"
 // import YourOrder from "./AddChips.tsx"
@@ -244,7 +244,7 @@ return (
 						  Your Order
 						</Nav.Link>
 
-                <Nav.Link as={Link} to="/UsePropsList">
+                <Nav.Link as={Link} to="/UsePropsPage">
 							Best Customers
 						</Nav.Link>
 
@@ -285,7 +285,7 @@ return (
             <Route path="/DonutsDozen" element={<DonutsDozen/>} />
 						<Route path="/Cookies" element={<Cookies/>} />
              <Route path="/AddChips" element={<AddChips/>} />
-            <Route path="/UsePropsList" element={<UsePropsList/>} />
+            <Route path="/UsePropsPage" element={<UsePropsPage/>} />
             <Route path="/Tips" element={<Tips/>} />
             <Route path="/AllIngredients" element={<AllIngredients/>} />
             <Route path="/AddIngredient" element={<AddIngredient/>} />

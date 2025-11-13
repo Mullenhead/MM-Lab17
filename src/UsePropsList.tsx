@@ -13,6 +13,7 @@ export default function UsePropsList() {
           btn_title2="Don't Press This"
           btn_title3="Change Pie"
           btn_title4="Increse Visits"
+          btn_title5="Rating"
           />
 
          
@@ -24,14 +25,18 @@ export default function UsePropsList() {
           btn_title2="Don't Press This"
           btn_title3="Change Pie"
           btn_title4="Increse Visits"
+          btn_title5="Rating"
           />
 
            <UseProps 
-        //   name="Tina Klinkmuller"
-        //   age={23} 
-        //   alive={true}
+          name="Tina Klinkmuller"
+          age={23} 
+          alive={true}
           btn_title1="3 Press This"
           btn_title2="Don't Press This"
+          btn_title3="Change Pie"
+          btn_title4="Increse Visits"
+          btn_title5="Rating"
           />
         
         
