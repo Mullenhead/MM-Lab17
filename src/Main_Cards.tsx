@@ -62,15 +62,17 @@ export default function Main_Cards() {
   return (
     <>
     <div >
+    <div >
        <h1 className="text-muted mt-6 ">Try our Famous Sandwiches</h1>           
           <div>
             {testCards.map( s => <Main_Card key={s.id} slide={ s }/> ) }         
           </div>
     </div>
-    <div>
+    <div className=" d-flex  flex-column p-5 m-4  ">
 
       <BasicAccordion/>
     </div>
+     </div>
 
     </>
     

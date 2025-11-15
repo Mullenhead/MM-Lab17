@@ -87,3 +87,14 @@ span {
 span:hover {
     color: orange; /* Change color on hover */
 }
+
+.accordion-button {
+  background-color: #f8f3e9;
+  color: #7f2a0b;
+  border-bottom: 1px solid #e9a57b;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #ffdd9d;
+  color: #000;
+}
