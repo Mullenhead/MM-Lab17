@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Star from './Star.tsx';
 
-const STAR_COUNT = 5;
+const STAR_COUNT = 7;
 
-const StarRating = () => {
+export default function StarRating ()  {
     const [rating, setRating] = useState(1);
 
     // Function to handle star click
@@ -26,4 +26,3 @@ const StarRating = () => {
     );
 };
 
-export default StarRating;

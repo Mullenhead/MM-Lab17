@@ -60,7 +60,7 @@ const incrementRating = () => {
              <p>Visits this year: {age}</p>
         </div>
         {/* this props key for alive uses a string literal, if true, returns Yes, if false, returns No */}
-        <p>Orders our {pname} </p>
+        <p>Loves our famous {pname} </p>
         <div className="d-flex flex-grow">
         {/* <button onClick={() => handleClick ("Susan")} className=" btn btn-primary m-2 "> {props.btn_title1}</button>
         <button onClick={(e) => handleClick2(e)} className="btn btn-secondary m-2"> {props.btn_title2}</button> */}

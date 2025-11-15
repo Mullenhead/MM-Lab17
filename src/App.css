@@ -75,14 +75,14 @@ body {
 
 
 /* for star rating */
-.UseProps p{
+.UsePropsA p{
  margin: 0;
 }
 
 span {
     /* font-size: 2rem; Increase the star size */
     /* color: gold; /* Star color */
-} */
+} 
 
 span:hover {
     color: orange; /* Change color on hover */

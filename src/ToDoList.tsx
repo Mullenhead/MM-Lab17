@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AddTodo from './AddTodo.tsx';
 import TaskList from './TaskList.tsx';
+// import Container from 'react-bootstrap/Container';
 
 let nextId = 3;
 const initialTodos = [
@@ -41,14 +42,16 @@ export default function TaskApp() {
 
   return (
     <>
-      <AddTodo
-        onAddTodo={handleAddTodo}
-      />
+    <div>
+      <AddTodo onAddTodo={handleAddTodo} />
+      <div>
       <TaskList
         todos={todos}
         onChangeTodo={handleChangeTodo}
         onDeleteTodo={handleDeleteTodo}
       />
+      </div>
+    </div>
     </>
   );
 }

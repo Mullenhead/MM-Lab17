@@ -24,14 +24,16 @@ export default function TodoForm({addTodo}) {
 
     return(
         <form onSubmit = {handleSubmit}>
+            <div>
             <label htmlFor="todoTitle">Todo: </label>
-            <input
+            <input 
             type="text"
             id="todoTitle"
             value={todo}
             onChange = {handleChange}
             />
             <button className="btn btn-success">Add</button>
+            </div>
         </form>
     )
 }

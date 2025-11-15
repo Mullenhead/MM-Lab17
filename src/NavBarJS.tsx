@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import {BrouseRouter as Router, Routes, Route} from "react-router-dom"
-import Cookies from "./Cookies.tsx"
+// import Cookies from "./Cookies.tsx"
 
 
 export const NavbarBootstrap = () => {

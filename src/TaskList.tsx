@@ -16,6 +16,7 @@ type TaskListProps = {
 export default function TaskList({ todos, onChangeTodo, onDeleteTodo }:TaskListProps) {
   return (
     <>
+    <div>
       {todos.map(todo => (
         <div key={todo.id}>
           <Task
@@ -25,6 +26,7 @@ export default function TaskList({ todos, onChangeTodo, onDeleteTodo }:TaskListP
           />
         </div>
       ))}
+      </div>
     </>
   );
 }

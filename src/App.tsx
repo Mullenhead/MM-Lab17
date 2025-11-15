@@ -11,7 +11,7 @@ import UsePropsPage from "./UsePropsPage.tsx"
 import Tips from "./Tips.tsx"
 // import Test from "./Test.tsx"
 // import YourOrder from "./AddChips.tsx"
-import DonutsDozen from "./DonutsDozen.tsx"
+
 // import AddSub from "./AddSub.tsx"
 // import Main_Cards from "./Main_Cards.tsx"
 import AllIngredients from "./AllIngredients.tsx"
@@ -248,9 +248,7 @@ return (
 							Best Customers
 						</Nav.Link>
 
-               {/* <Nav.Link as={Link} to="/DonutsDozen">
-							DonutsDozen
-						</Nav.Link>        */}
+              
 {/* 
 						<Nav.Link as={Link} to="/Cookies">
 							Cookies
@@ -282,13 +280,13 @@ return (
           {/* Paths to functions to single page versions of pages */}
 					<Route path="/" element={<Outlet />}>
 						<Route index element={<Main_Cards />} />
-            <Route path="/DonutsDozen" element={<DonutsDozen/>} />
+           
 						<Route path="/Cookies" element={<Cookies/>} />
              <Route path="/AddChips" element={<AddChips/>} />
             <Route path="/UsePropsPage" element={<UsePropsPage/>} />
             <Route path="/Tips" element={<Tips/>} />
             <Route path="/AllIngredients" element={<AllIngredients/>} />
-            <Route path="/AddIngredient" element={<AddIngredient/>} />
+            {/* <Route path="/AddIngredient" element={<AddIngredient/>} /> */}
              <Route path="/ToDoList" element={<ToDoList/>} />
 						<Route path="*" element={<NotFound />} />
 					</Route>

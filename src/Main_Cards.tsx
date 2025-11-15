@@ -6,6 +6,7 @@ import cardImage3 from "./assets/sub_3.png";
 import cardImage4 from "./assets/sub_4.png";
 import cardImage5 from "./assets/sub_5.png";
 import cardImage6 from "./assets/sub_6.png";
+import BasicAccordion from "./BasicAccordion";
 
 
 
@@ -59,12 +60,20 @@ const testCards = [
 
 export default function Main_Cards() {
   return (
+    <>
     <div >
        <h1 className="text-muted mt-6 ">Try our Famous Sandwiches</h1>           
           <div>
             {testCards.map( s => <Main_Card key={s.id} slide={ s }/> ) }         
           </div>
     </div>
+    <div>
+
+      <BasicAccordion/>
+    </div>
+
+    </>
+    
        
    )
 } 
