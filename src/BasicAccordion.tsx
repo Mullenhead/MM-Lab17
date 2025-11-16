@@ -19,7 +19,7 @@ export default function BasicAccordion() {
       <Accordion.Item eventKey="1">
         <Accordion.Header>Everything is made fresh by Mama Louisa</Accordion.Header>
         <Accordion.Body>
-           <h4>Just like you mother cooks</h4>
+           <h4>Just like your mother cooks</h4>
           At MaMa Louisa’s, every dish begins with the same simple promise: fresh ingredients, 
           prepared with care. From slow-roasted meats to hand-chopped toppings and sauces 
           crafted in-house, everything is made the way MaMa Louisa herself would make 

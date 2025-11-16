@@ -7,6 +7,7 @@ import cardImage4 from "./assets/sub_4.png";
 import cardImage5 from "./assets/sub_5.png";
 import cardImage6 from "./assets/sub_6.png";
 import BasicAccordion from "./BasicAccordion";
+import MainCardAlert from "./MainCardAlert";
 
 
 
@@ -64,11 +65,15 @@ export default function Main_Cards() {
     <div >
     <div >
        <h1 className="text-muted mt-6 ">Try our Famous Sandwiches</h1>           
-          <div>
+          {/* <div>
             {testCards.map( s => <Main_Card key={s.id} slide={ s }/> ) }         
+          </div> */}
+           <div >
+            {/* adding a "show ingredients button" type of alert */}
+            {testCards.map( s => <MainCardAlert key={s.id} slide={ s }/> ) }         
           </div>
     </div>
-    <div className=" d-flex  flex-column p-5 m-4  ">
+    <div className= " d-flex  flex-column p-5 m-4  ">
 
       <BasicAccordion/>
     </div>
