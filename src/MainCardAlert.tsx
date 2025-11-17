@@ -16,14 +16,16 @@ export default function MainCardAlert ({ slide }:
 
   return (
     <>
+ <div >
   <div className=" d-inline-flex  bd-highlight" > 
     <div className=" d-flex border border-secondary rounded-3 flex-column p-2 m-3 shadow ">
       <img src={slide.image} style={{ width: "300px" }} onClick={() => alert ( slide.ingredients)}/>
       <span>{ slide.order }, { slide.description  }</span> 
+      
    </div>
  </div>
 
-
+    <div>
       <Alert show={show} variant="primary">
         <Alert.Heading>Ingredients:</Alert.Heading>
          <h3>{ slide.order }, { slide.description  }</h3> 
@@ -35,8 +37,10 @@ export default function MainCardAlert ({ slide }:
           </Button>
         </div>
       </Alert>
+    </div>
 
       {!show && <Button onClick={() => setShow(true)}>Show Ingredients</Button>}
+      </div>
     </>
   );
 }

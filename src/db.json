@@ -23,6 +23,13 @@
       "beverage": "Sprite",
       "extra": "Chips",
       "title": "House special"
+    },
+    {
+      "description": "Mystery meat sandwich",
+      "beverage": "Dr. Pepper",
+      "extra": "bag of Doritos",
+      "order": "4",
+      "id": 4
     }
   ],
   "subIngredients": [

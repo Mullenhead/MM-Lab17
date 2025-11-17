@@ -74,7 +74,6 @@ export default function Main_Cards() {
           </div>
     </div>
     <div className= " d-flex  flex-column p-5 m-4  ">
-
       <BasicAccordion/>
     </div>
      </div>

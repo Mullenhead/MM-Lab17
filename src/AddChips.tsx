@@ -138,8 +138,8 @@ await fetch('http://localhost:3005/special/' + itemToDelete, {
           return (
               <div className=" d-flex  border border-secondary rounded-3 flex-column p-2 m-2 shadow-sm ">
               <div className="d-inline-flex   ">
-                   <p className="m-2">{`Order ${dataObj.order },`}</p>
-                   <h5 className=" m-2 fw-bold">{ ` ${dataObj.description }, ice cold ${ dataObj.beverage }, and  ${ dataObj.extra} `}</h5>
+                   <p className="m-2">{`Order ${dataObj["order"] },`}</p>
+                   <h5 className=" m-2 fw-bold">{ ` ${dataObj["description"] }, ice cold ${ dataObj["beverage"] }, and  ${ dataObj["extra"]} `}</h5>
                    </div>
                    
                 

@@ -28,7 +28,6 @@
 
 import React, {useState, useEffect} from "react";
 
-
 export default function Obsecure() {
 
     const [todo, setTodo]= useState({});
