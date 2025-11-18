@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent } from "react"
 import type { Slide } from "./types"
+import React, { type MouseEvent } from 'react';
 
 type Props = {
     updateSlide: (property: string, value: string, id?: number) => void

@@ -6,7 +6,7 @@ export default function UsePropsList() {
         <>
         {/* key value pairs for UseProps, name, age, button title, alive status */}
          <UseProps 
-          name="Billy Bob"
+          name="Billy Bob Thorton"
           age={30} 
           alive={false}
           btn_title1="1 Press This"

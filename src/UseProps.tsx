@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import StarRating from "./StarRating.tsx";
 import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react"
 
-export default function UseProps(props) {
+export default function UseProps(props: any) {
 
 
 // button takes in "name you clicked me" prop for three clicks, then changes to another message

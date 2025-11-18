@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Tips from "./Tips.tsx"
+import Alert from 'react-bootstrap/Alert';
 // import React, { useState, useEffect } from "react";
 
 type orderProps = {
@@ -79,9 +80,28 @@ await fetch('http://localhost:3005/special/' + lastCreatedItem.id, {
 }
 
 
+// Alert function test
+// function LinksExample() {
+//   return (
+//     <>
+//       {[
+//         'primary',
+//       ].map((variant) => (
+//         <Alert key={variant} variant={variant}>
+//           This is a {variant} alert with{' '}
+//           <Alert.Link href="#">an example link</Alert.Link>. Give it a click if
+//           you like.
+//         </Alert>
+//       ))}
+//     </>
+//   );
+// }
+
+
 //Delete API
 async function onDeleteFoodClick() {
     const itemToDelete = prompt('Enter order number to delete!');
+    
 
 //     // Use State hook for age
 //     const [age, setAge] = useState(5);
